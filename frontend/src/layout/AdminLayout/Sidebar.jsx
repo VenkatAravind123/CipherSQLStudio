@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { MdLogout } from "react-icons/md";
 import "./SidebarAdmin.scss";
 
 export default function Sidebar({ title, items }) {
@@ -40,21 +41,17 @@ export default function Sidebar({ title, items }) {
             }
           >
             {it.icon && <span className="sidebar__icon">{it.icon}</span>}
-            <span>{it.label}</span>
+            <span className="sidebar__label">{it.label}</span>
           </NavLink>
         ))}
       </nav>
 
       <div className="sidebar__footer">
         <button type="button" className="sidebar__link1" onClick={handleLogout}>
-          Log out
+          <span className="sidebar__label">Log out</span>
+          <MdLogout className="sidebar__icon-only" size={20} />
         </button>
       </div>
     </aside>
   );
 }
-
-// Sidebar.propTypes = {
-//   title: () => null,
-//   items: () => null,
-// };

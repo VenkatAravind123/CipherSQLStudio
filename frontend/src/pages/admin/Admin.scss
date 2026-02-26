@@ -1,6 +1,6 @@
 .admin-assignments {
   width: 100%;
-
+padding: 16px;
   &__header {
     display: flex;
     align-items: flex-start;
@@ -206,8 +206,14 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .admin-assignments {
+    padding: 16px;
+  }
+}
 
 .create-assignment {
+
   width: 100%;
   max-width: 820px;
 
@@ -355,5 +361,14 @@
         background: rgba(15, 23, 42, 0.04);
       }
     }
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .create-assignment {
+    padding: 16px;
   }
 }

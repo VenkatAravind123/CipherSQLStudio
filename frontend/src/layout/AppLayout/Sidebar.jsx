@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { MdLogout } from "react-icons/md";
 import "./SidebarApp.scss";
 
 export default function Sidebar({ title, items }) {
@@ -27,7 +28,9 @@ export default function Sidebar({ title, items }) {
 
   return (
     <aside className="sidebarapp">
-      <div className="sidebarapp__brand">{title}</div>
+      <div className="sidebarapp__header">
+        <div className="sidebarapp__brand">{title}</div>
+      </div>
 
       <nav className="sidebarapp__nav">
         {items.map((it) => (
@@ -40,14 +43,15 @@ export default function Sidebar({ title, items }) {
             }
           >
             {it.icon && <span className="sidebarapp__icon">{it.icon}</span>}
-            <span>{it.label}</span>
+            <span className="sidebarapp__label">{it.label}</span>
           </NavLink>
         ))}
       </nav>
 
       <div className="sidebarapp__footer">
         <button type="button" className="sidebarapp__link1s" onClick={handleLogout}>
-          Log out
+          <span className="sidebarapp__label">Log out</span>
+          <MdLogout className="sidebarapp__icon-only" size={20} />
         </button>
       </div>
     </aside>

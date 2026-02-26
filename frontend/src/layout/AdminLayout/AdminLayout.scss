@@ -20,21 +20,35 @@ $transition-speed: 150ms;
   padding: 24px 32px;
   background: $main-bg;
   overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 0;
+  width: 100%;
 }
 
 // Page content area
-// .page1 {
+// .page, .page1 {
 //   max-width: 1200px;
+//   margin: 0 auto;
+//   width: 100%;
+//   box-sizing: border-box;
 // }
 
-.page1 h1 {
+// Page content area
+.page, .page1 {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+
+.page h1, .page1 h1 {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 8px;
   color: #333;
 }
 
-.page1 p {
+.page p, .page1 p {
   color: #666;
   line-height: 1.6;
 }
@@ -52,10 +66,14 @@ $transition-speed: 150ms;
 
 @media (max-width: 768px) {
   .shell {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 70px;
   }
 
   .shell__main {
     padding: 16px;
+    flex: 1;
   }
 }

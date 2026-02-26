@@ -99,9 +99,104 @@ $transition-speed: 150ms;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-// Responsive (hide on mobile, show as drawer later)
+.sidebar__icon-only {
+  display: none;
+}
+
+// Responsive bottom nav for mobile
 @media (max-width: 768px) {
   .sidebar {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    min-height: auto;
+    flex-direction: row;
+    padding: 0;
+    z-index: 50;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+  }
+
+  .sidebar__brand,
+  .sidebar__section {
     display: none;
+  }
+
+  .sidebar__nav {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+  }
+
+  .sidebar__link {
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 0;
+    border-radius: 0;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sidebar__link:hover {
+    transform: none;
+  }
+
+  .sidebar__link--active {
+    background: transparent;
+  }
+
+  .sidebar__link--active::before {
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .sidebar__label {
+    display: none;
+  }
+  
+  .sidebar__icon {
+    font-size: 1.4em;
+  }
+
+  .sidebar__icon-only {
+    display: block;
+    font-size: 1.4em;
+  }
+
+  .sidebar__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    flex: 0 0 60px;
+  }
+
+  .sidebar__link1 {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    color: black;
+  }
+
+  .sidebar__link1:hover {
+    background: rgba(0,0,0,0.04);
   }
 }

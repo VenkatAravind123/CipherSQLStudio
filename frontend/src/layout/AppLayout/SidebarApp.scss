@@ -16,12 +16,25 @@
   font-weight: 700;
   border-left: 4px solid #3b82f6;
 }
+.sidebarapp__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
 .sidebarapp__brand {
   font-size: 1.2rem;
   font-weight: 800;
   color: #fff;
-  margin-bottom: 32px;
   letter-spacing: -0.02em;
+}
+.sidebarapp__close {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px;
 }
 
 .sidebarapp__nav {
@@ -87,8 +100,95 @@
   outline: none;
 }
 
+.sidebarapp__icon-only {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .sidebarapp {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    min-height: auto;
+    flex-direction: row;
+    padding: 0;
+    z-index: 50;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+  }
+
+  .sidebarapp__header,
+  .sidebarapp__brand {
     display: none;
+  }
+
+  .sidebarapp__nav {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+  }
+
+  .sidebarapp__link {
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 0;
+    border-radius: 0;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sidebarapp__link--active {
+    background: transparent;
+    border-left: none;
+    border-top: 3px solid #3b82f6;
+    color: #3b82f6;
+  }
+
+  .sidebarapp__label {
+    display: none;
+  }
+  
+  .sidebarapp__icon {
+    font-size: 1.4em;
+  }
+
+  .sidebarapp__icon-only {
+    display: block;
+    font-size: 1.4em;
+  }
+
+  .sidebarapp__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    flex: 0 0 60px;
+  }
+
+  .sidebarapp__link1s {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-top: 3px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .sidebarapp__link1s:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.08);
   }
 }
