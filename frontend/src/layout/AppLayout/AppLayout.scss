@@ -1,0 +1,61 @@
+// Variables
+$sidebar-width: 260px;
+$sidebar-bg: #0f172a;
+$sidebar-text: rgba(255, 255, 255, 0.85);
+$sidebar-text-active: #fff;
+$sidebar-hover-bg: rgba(255, 255, 255, 0.08);
+$sidebar-active-bg: rgba(255, 255, 255, 0.12);
+$main-bg: #f1f5f9;
+$border-radius: 10px;
+$transition-speed: 150ms;
+
+// Shell (sidebar + main)
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: $sidebar-width 1fr;
+}
+
+.shell__main {
+  padding: 24px 32px;
+  background: $main-bg;
+  overflow-y: auto;
+}
+
+// Page content area
+// .page {
+//   max-width: 1200px;
+// }
+
+.page h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.page p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+// Responsive (tablet + mobile)
+@media (max-width: 1024px) {
+  .shell {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .shell__main {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .shell__main {
+    padding: 16px;
+  }
+}

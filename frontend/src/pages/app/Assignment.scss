@@ -1,0 +1,315 @@
+.assignment-page {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  // ── Header ────────────────────────────
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  &__back-btn {
+    background: none;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    transition: background 0.15s;
+
+    &:hover {
+      background: rgba(15, 23, 42, 0.04);
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__badge {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  .badge--easy {
+    background: rgba(46, 204, 113, 0.12);
+    color: #16a34a;
+  }
+  .badge--medium {
+    background: rgba(241, 196, 15, 0.14);
+    color: #ca8a04;
+  }
+  .badge--hard {
+    background: rgba(239, 68, 68, 0.12);
+    color: #dc2626;
+  }
+
+  &__category {
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+
+  // ── Question ──────────────────────────
+  &__question {
+    padding: 24px;
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+
+    h1 {
+      font-size: 1.4rem;
+      margin: 0 0 8px;
+      color: #0f172a;
+    }
+
+    p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+  }
+
+  &__hint-section {
+    margin-top: 14px;
+  }
+
+  &__hint-btn {
+    background: none;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #3b82f6;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(59, 130, 246, 0.06);
+    }
+  }
+
+  &__hint-text {
+    margin-top: 10px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: rgba(59, 130, 246, 0.06);
+    color: #3b82f6;
+    font-size: 0.92rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  // ── Editor ────────────────────────────
+  &__editor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+  }
+
+  &__editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f172a;
+    }
+  }
+
+  &__shortcut {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    background: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  &__textarea {
+    font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    padding: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 12px;
+    background: #0f172a;
+    color: #e2e8f0;
+    resize: vertical;
+    min-height: 160px;
+    tab-size: 2;
+
+    &:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    &::placeholder {
+      color: #64748b;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 650;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.05s;
+
+    &:hover:not(:disabled) {
+      opacity: 0.85;
+    }
+    &:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &--run {
+      background: #3b82f6;
+      color: #fff;
+    }
+    &--expected {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid rgba(15, 23, 42, 0.1);
+    }
+    &--submit {
+      background: #16a34a;
+      color: #fff;
+    }
+  }
+
+  // ── Result Banner ─────────────────────
+  &__banner {
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-weight: 650;
+    font-size: 0.95rem;
+
+    &--pass {
+      background: rgba(46, 204, 113, 0.1);
+      border: 1px solid rgba(46, 204, 113, 0.25);
+      color: #16a34a;
+    }
+    &--fail {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      color: #dc2626;
+    }
+  }
+
+  // ── Output Section ────────────────────
+  &__output-section {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+
+    h3 {
+      font-size: 1rem;
+      margin: 0 0 12px;
+      color: #0f172a;
+    }
+  }
+
+  &__compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__error {
+    color: #dc2626;
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  &__muted {
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  // ── Table ─────────────────────────────
+  &__table-wrap {
+    overflow-x: auto;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 10px;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+
+    th,
+    td {
+      padding: 10px 14px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: #334155;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    td {
+      border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+      color: #475569;
+      font-family: "JetBrains Mono", "Fira Code", monospace;
+      font-size: 0.85rem;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: rgba(59, 130, 246, 0.03);
+    }
+  }
+
+  &__row-count {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    color: #94a3b8;
+    border-top: 1px solid rgba(15, 23, 42, 0.04);
+  }
+}
