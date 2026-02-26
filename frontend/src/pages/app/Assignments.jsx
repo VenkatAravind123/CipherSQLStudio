@@ -29,7 +29,7 @@ export default function Assignments() {
 
    const displayAssignment = async (id) => {
     try{
-      navigate(`/app/attempts/${id}`)
+      navigate(`/app/assignment/${id}`)
     }
     catch(err){
       console.error(err.message);

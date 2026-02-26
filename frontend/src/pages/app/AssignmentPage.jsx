@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Assignment.scss";
+import Editor from "@monaco-editor/react";
 
 const API = "http://localhost:5000";
 
@@ -175,7 +176,7 @@ export default function AssignmentPage() {
           <label>SQL Query</label>
           <span className="assignment-page__shortcut">Ctrl + Enter to Run</span>
         </div>
-        <textarea
+        {/* <textarea
           className="assignment-page__textarea"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -183,6 +184,15 @@ export default function AssignmentPage() {
           placeholder="-- Write your SQL query here&#10;SELECT * FROM employees;"
           rows={8}
           spellCheck={false}
+        /> */}
+        <Editor height="50vh"
+        defaultLanguage="javascript"
+        defaultValue="// some comment"
+        theme="vs-dark"
+        className="monaco-editor"
+        onChange={(value) => setQuery(value)}
+        onKeyDown={handleKeyDown}
+        value={query}
         />
         <div className="assignment-page__actions">
           <button

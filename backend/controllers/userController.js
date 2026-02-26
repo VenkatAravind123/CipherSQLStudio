@@ -238,6 +238,18 @@ exports.submitAssignment = async(req,res) =>{
     return res.status(500).json({message:err.message});
   }
 };
+
+exports.getSubmissionsByUser = async(req,res) =>{
+  try{
+    const userId = req.user.id;
+    const submissions = await Submission.find({user:userId}).sort("-createdAt");
+    //console.log(submissions);
+    return res.json({submissions});
+  }
+  catch(err){
+    return res.status(500).json({message:err.message});
+  }
+}
 function blockDangerousSQL(query) {
   const upper = query.toUpperCase().replace(/\s+/g, " ").trim();
   const dangerous = [

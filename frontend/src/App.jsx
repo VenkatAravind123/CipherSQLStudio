@@ -14,6 +14,7 @@ import AdminLayout from './layout/AdminLayout/AdminLayout';
 import Assignments from './pages/app/Assignments'
 import AdminAssignments from './pages/admin/Assignments';
 import EditAssignment from './pages/admin/EditAssignment';
+import Attempts from './pages/app/Attempts';
 import CreateAssignment from './pages/admin/CreateAssignment'
 import AssignmentPage from './pages/app/AssignmentPage'
 import Profile from './pages/app/Profile'
@@ -32,7 +33,8 @@ function App() {
       <Route path="/app" element={<AppLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="assignments" element={<Assignments />} />
-        <Route path="attempts/:id" element={<AssignmentPage />} />
+        <Route path="assignment/:id" element={<AssignmentPage />} />
+        <Route path="attempts" element={<Attempts />} />
         <Route path="profile" element={<Profile />} />
       </Route>
        <Route path="/admin" element={<AdminLayout />}>

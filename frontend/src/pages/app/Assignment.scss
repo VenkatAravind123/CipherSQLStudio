@@ -313,3 +313,109 @@
     border-top: 1px solid rgba(15, 23, 42, 0.04);
   }
 }
+
+.monaco-editor{
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: #0f172a;
+}
+
+.attempts-page {
+  max-width: 100rem;  
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.attempts-title {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+.attempts-error {
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.attempts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.attempts-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.04);
+  transition: box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &--pass {
+    border-left: 5px solid #16a34a;
+  }
+  &--fail {
+    border-left: 5px solid #dc2626;
+  }
+}
+
+.attempts-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.attempts-status {
+  font-weight: 700;
+  color: #16a34a;
+  &.attempts-card--fail {
+    color: #dc2626;
+  }
+}
+
+.attempts-date {
+  color: #64748b;
+  font-size: 0.92rem;
+}
+
+.attempts-assignment {
+  font-size: 1.05rem;
+  color: #334155;
+}
+
+.attempts-query {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.92rem;
+  color: #475569;
+  pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}
+
+.attempts-error-details {
+  color: #dc2626;
+  background: #fee2e2;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.92rem;
+}
+
+.attempts-empty {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-top: 32px;
+  text-align: center;
+}
