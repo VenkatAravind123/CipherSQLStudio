@@ -31,7 +31,7 @@ export default function Assignments() {
     if (!globalThis.confirm("Delete this assignment? This cannot be undone.")) return;
 
     try {
-      const res = await fetch(`${API}/api/assignment/${id}`, {
+      const res = await fetch(`${API}/api/admin/deleteassignment/${id}`, {
         method: "DELETE",
         credentials: "include",
       });

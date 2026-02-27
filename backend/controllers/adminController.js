@@ -81,5 +81,17 @@ const getAssignmentAdmin = async (req, res) => {
 };
 
 
+const deleteAssignment = async (req,res) =>{
+  try{
+    const assignment = await Assignment.findByIdAndDelete(req.params.id);
+    if(!assignment) return res.status(404).json({message:"Not Found"});
+    await Submission.deleteMany({assignment:req.params.id});
+    return res.json({message:"Assignment Deleted"});
+  }
+  catch(err){
+    return res.status(500).json({message:err.message});
+  }
+}
 
-module.exports = {createAssignment,getAllAssignments,getAssignmentAdmin,updateAssignment}; 
+
+module.exports = {createAssignment,getAllAssignments,getAssignmentAdmin,updateAssignment,deleteAssignment}; 
