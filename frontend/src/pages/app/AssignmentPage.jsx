@@ -15,6 +15,7 @@ export default function AssignmentPage() {
   const [query, setQuery] = useState("");
   const [runResult, setRunResult] = useState(null);
   const [expectedOutput, setExpectedOutput] = useState(null);
+  const [showSchema,setShowSchema] = useState(false);
   const [submitResult, setSubmitResult] = useState(null);
   const [showHint, setShowHint] = useState(false);
   const [loading, setLoading] = useState({
@@ -184,6 +185,24 @@ export default function AssignmentPage() {
       <div className="assignment-page__question">
         <h1>{assignment.title}</h1>
         <p>{assignment.description}</p>
+
+        {assignment.setupSQL && (
+          <div className="assignment-page__schema-section">
+            <button className="assignment-page__hint-btn" onClick={() => setShowSchema(!showSchema)}>{showSchema ? "Hide Schema" : "Show Schema"}</button>
+            {showSchema && (
+              <div style={{ 
+                marginTop: '10px', 
+                background: '#1e1e1e', 
+                padding: '15px', 
+                borderRadius: '8px', 
+                border: '1px solid #333',
+                overflowX: 'auto' 
+              }}>
+                <pre style={{ margin: 0, color: '#d4d4d4', fontSize: '14px', fontFamily: '"Consolas", monospace' }}>{assignment.setupSQL}</pre>
+              </div>
+            )}
+          </div>
+        )}
 
         {assignment.hint && (
           <div className="assignment-page__hint-section">

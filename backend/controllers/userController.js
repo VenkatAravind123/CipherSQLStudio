@@ -277,7 +277,7 @@ exports.getHint = async (req,res) =>{
     `;
 
     const result = await model.generateContent(prompt);
-    console.log(result.response.text());
+    // console.log(result.response.text());
     return res.json({hint:result.response.text()});
     }
     catch(err){
